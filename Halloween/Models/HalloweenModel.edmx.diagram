@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="99a3318f40a34c5daebed142e05e4dfc" Name="Diagram1">
+        <EntityTypeShape EntityType="HalloweenModel.Order" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HalloweenModel.Product" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HalloweenModel.Receipt" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="HalloweenModel.User" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <AssociationConnector Association="HalloweenModel.FK_Orders_Receipts" ManuallyRouted="false" />
+        <AssociationConnector Association="HalloweenModel.FK_Orders_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="HalloweenModel.FK_Orders_Users1" ManuallyRouted="false" />
+        <AssociationConnector Association="HalloweenModel.FK_Receipts_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

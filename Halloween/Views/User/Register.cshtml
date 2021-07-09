@@ -1,0 +1,41 @@
+﻿@model Halloween.Models.User
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <title>Register</title>
+    <style>
+        .login-form { width:40%; margin:auto;}
+    </style>
+</head>
+<body>
+    <div class="login-form">
+        @using (Html.BeginForm("Register", "User"))
+        {
+            <h2 class="text-center">Registration</h2>
+            <div class="form-group">
+                <input type="text" class="form-control" name="UserName" required="required" placeholder="Enter Your User Name">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="Password" required="required" placeholder="Enter Your Password">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" name="Contact" required="required" placeholder="Enter Your Contact Number" min="0" oninput="validity.valid||(value='')" >
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+            </div>
+
+        }
+        <a href="/User/Index">Login</a>
+
+    </div>
+</body>
+</html>

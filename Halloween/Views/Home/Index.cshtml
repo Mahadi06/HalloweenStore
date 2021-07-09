@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Halloween.Models.Product>
+
+@{
+    Layout = null;
+}
+
+@if (Session["username"] != null)
+{
+    
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link href="~/Content/main-index.css" rel="stylesheet" />
+</head>
+<body>
+    <center>
+        <img src="~/Content/img/banner.jpg" id="banner" width="100%" />
+    </center>
+
+    <div class="w3-sidebar w3-bar-block w3-black" id="div1" style="width:18%">
+        <a href="/Home/Index" class="w3-bar-item w3-button">Home</a>
+        <span class="w3-bar-item w3-button">@Html.ActionLink("Order", "Order")</span>    
+        <a href="/Home/Checkout" class="w3-bar-item w3-button">Cart</a>
+        @*<span class="w3-bar-item w3-button">@Html.ActionLink("Contact Us", "ContactUs","Home")</span>*@
+        <a href="/Home/ContactUs" class="w3-bar-item w3-button" >Contact Us</a>
+        <a href="/Home/Logout" class="w3-bar-item w3-button">Logout</a>
+
+
+    </div>
+    <div>
+        <h2 id="msg">
+            Welcome to the Halloween Store <br />
+            Thank you for visiting us this beautiful CURRENT DAY!
+        </h2>
+    </div>
+
+      
+
+        <script src="~/scripts/jquery-3.0.0.min.js"></script>
+    
+
+</body>
+</html>
+}

@@ -1,0 +1,94 @@
+﻿@model IEnumerable<Halloween.Models.Product>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <title>Index</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Halloween SuperStore</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-warning" href="/Home/Index">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-warning" href="/Home/Order">Order <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-warning" href="/Home/Checkout">Cart <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-warning" href="/Home/ContactUs">Contact Us <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-warning ml-5" href="/Home/Logout">Logout <span class="sr-only">(current)</span></a>
+                </li>
+
+
+
+            </ul>
+
+        </div>
+    </nav>
+
+
+
+
+
+    <div class="row">
+        <div class="col-lg-10 col-md-10 col-sm-10">
+            @if (TempData["total"] == null)
+            {
+
+                <h3>
+                    Total Bill: $0 
+                </h3>
+            }
+            else
+            {
+                <h3> Total Bill: $@TempData["total"] </h3>
+
+            }
+
+        </div>
+
+</div>
+
+        <div class="col-lg-2 col-md-2 col-sm-2" style="float:right;margin-top:10px;clear:left">
+            <span class="btn btn-warning">@Html.ActionLink("Check Out", "Checkout", "Home")</span>
+        </div>
+
+
+        <div class="row" style="margin-bottom:100px;">
+            @if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    <div class="col-lg-3 col-md-4" style="height:200px;margin-top:100px">
+
+                        <img class="img img-responsive cimg" src="@Url.Content(item.Image)" style=" height:50%;width:50% ;margin-left:auto;margin-right:auto;display:block" />
+                        <h3 style="color:#808080; font-family:'Arial Rounded MT';text-align:center">@item.ProductName <br /> <small>$@item.Price </small></h3>
+                        <h4 style="color:#808080; font-family:'Arial Rounded MT';text-align:center"> <span class="btn btn-warning">@Html.ActionLink("Add to Cart", "Cart", new { id = @item.ProductId })</span></h4>
+
+                    </div>
+
+                }
+            }
+        </div>
+
+        <script src="~/scripts/jquery-3.0.0.min.js"></script>
+</body>
+</html>

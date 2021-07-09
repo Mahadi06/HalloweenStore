@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Halloween.Models.User>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <title>Index</title>
+    <style>
+        .login-form{
+            width:40%;
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+    @if (TempData["rs"] != null)
+    { <div class="alert alert-success" role="alert">
+        @TempData["rs"]
+    </div>}
+
+    @if (TempData["logerror"] != null)
+    { <div class="alert alert-danger" role="alert">
+        @TempData["logerror"]
+    </div>}
+    
+    <div class="login-form">
+        @using (Html.BeginForm("Index", "User"))
+        {
+            <h2 class="text-center">Log in</h2>
+            <div class="form-group">
+                <input type="text" class="form-control" name="UserName" required="required" placeholder="UserName">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="Password" required="required" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Log in</button>
+            </div>
+
+        }
+        <a href="/User/Register">Register</a>
+    </div>
+</body>
+</html>

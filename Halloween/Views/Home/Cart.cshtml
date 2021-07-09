@@ -1,0 +1,87 @@
+﻿@model Halloween.Models.Product
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <title>Cart</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Halloween SuperStore</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-warning" href="/Home/Index">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-warning" href="/Home/Order">Order <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-warning" href="/Home/Checkout">Cart <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-warning" href="/Home/ContactUs">Contact Us <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-warning ml-5" href="/Home/Logout">Logout <span class="sr-only">(current)</span></a>
+                </li>
+
+
+
+            </ul>
+
+        </div>
+    </nav>
+
+
+    @using (@Html.BeginForm())
+    {
+
+
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-4 col-md-4 col-sm-4">
+
+                    <img style="min-height:200px; width:200px;" src="@Url.Content(Model.Image)" />
+
+
+                </div>
+
+
+
+                <div class="col-lg-8 col-md-8 col-sm-8">
+
+                    <h1>Product Name: @Model.ProductName</h1>
+                    <h2>Price: $@Model.Price </h2>
+                    <h3>Description: @Model.Description</h3>
+
+                    <input type="number" name="qty" value="1" min="1" oninput="validity.valid||(value='')" id="qty" />
+
+                    <input type="submit" value="Add to Cart" class="btn btn-warning" />
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+    }
+</body>
+</html>

@@ -1,0 +1,107 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <title>Checkout</title>
+    <style> 
+        body { margin-left:30px}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Halloween SuperStore</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-warning" href="/Home/Index">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-warning" href="/Home/Order">Order <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-warning" href="/Home/Checkout">Cart <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-warning" href="/Home/ContactUs">Contact Us <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-warning ml-5" href="/Home/Logout">Logout <span class="sr-only">(current)</span></a>
+                </li>
+
+
+
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <h2>Checkout</h2>
+    <h3 class="text-primary">Customer Name: @Session["username"]</h3>
+    <h3 class="text-primary">Customer CONTACT: @Session["contact"]</h3>
+
+
+    @if (TempData["cart"] != null)
+    {
+
+
+        <table class="table table-bordered">
+
+            <thead>
+                <tr>
+                    <th>PRODUCT NAME</th>
+                    <th>PRICE</th>
+                    <th>QUANTITY</th>
+                    <th>BILL</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in TempData["cart"] as List<Halloween.Models.Cart>)
+                {
+
+                    <tr>
+                        <td>@item.productName</td>
+                        <td>$@item.Price</td>
+                        <td>@item.Quantity</td>
+                        <td>$@item.Bill</td>
+
+                    </tr>
+
+                }
+
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td colspan="4"></td>
+                    <td>TOTAL: $@TempData["total"]</td>
+
+                </tr>
+            </tfoot>
+
+        </table>
+
+
+
+
+
+    }
+    else
+    {
+        <h3 style="color:coral">Your cart is empty....</h3>
+    }
+
+    </body>
+</html>
