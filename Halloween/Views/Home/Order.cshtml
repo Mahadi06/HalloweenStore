@@ -10,11 +10,12 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/order.css" rel="stylesheet" />
     <title>Index</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Halloween SuperStore</a>
+        <a class="navbar-brand" href="/Home/Index">Halloween SuperStore</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -48,18 +49,18 @@
 
 
 
-    <div class="row">
+    <div class="row ">
         <div class="col-lg-10 col-md-10 col-sm-10">
             @if (TempData["total"] == null)
             {
 
-                <h3>
+                <h3 class="bil">
                     Total Bill: $0 
                 </h3>
             }
             else
             {
-                <h3> Total Bill: $@TempData["total"] </h3>
+                <h3 class="bill"> Total Bill: $@TempData["total"] </h3>
 
             }
 
@@ -67,7 +68,7 @@
 
 </div>
 
-        <div class="col-lg-2 col-md-2 col-sm-2" style="float:right;margin-top:10px;clear:left">
+        <div class="col-lg-2 col-md-2 col-sm-2" style="margin-top:10px;">
             <span class="btn btn-warning">@Html.ActionLink("Check Out", "Checkout", "Home")</span>
         </div>
 
@@ -79,7 +80,7 @@
                 {
                     <div class="col-lg-3 col-md-4" style="height:200px;margin-top:100px">
 
-                        <img class="img img-responsive cimg" src="@Url.Content(item.Image)" style=" height:50%;width:50% ;margin-left:auto;margin-right:auto;display:block" />
+                        <img class="img img-responsive cimg" src="@Url.Content(item.Image)" style=" height:90%;margin-left:auto;margin-right:auto;display:block" />
                         <h3 style="color:#808080; font-family:'Arial Rounded MT';text-align:center">@item.ProductName <br /> <small>$@item.Price </small></h3>
                         <h4 style="color:#808080; font-family:'Arial Rounded MT';text-align:center"> <span class="btn btn-warning">@Html.ActionLink("Add to Cart", "Cart", new { id = @item.ProductId })</span></h4>
 

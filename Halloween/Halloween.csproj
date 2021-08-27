@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -134,15 +135,21 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\21-skeleton-mermaid-prop.jpg" />
     <Content Include="Content\img\arm1.jpg" />
     <Content Include="Content\img\banner.jpg" />
+    <Content Include="Content\img\batman-costume.jpg" />
     <Content Include="Content\img\blacklight1.jpg" />
     <Content Include="Content\img\cat1.jpg" />
+    <Content Include="Content\img\child-royal-vampire.jpg" />
     <Content Include="Content\img\cool1.jpg" />
+    <Content Include="Content\img\delightful-dalmatian.jpg" />
+    <Content Include="Content\img\deluxe-realistic-skull.jpg" />
     <Content Include="Content\img\fog1.jpg" />
     <Content Include="Content\img\fogjuice1.jpg" />
     <Content Include="Content\img\frank1.jpg" />
     <Content Include="Content\img\freddy1.jpg" />
+    <Content Include="Content\img\hammer-dracula-mask.jpg" />
     <Content Include="Content\img\head1.jpg" />
     <Content Include="Content\img\head2.jpg" />
     <Content Include="Content\img\hippie1.jpg" />
@@ -152,13 +159,17 @@
     <Content Include="Content\img\powers1.jpg" />
     <Content Include="Content\img\rat1.jpg" />
     <Content Include="Content\img\rat2.jpg" />
+    <Content Include="Content\img\red-suit-devil.jpg" />
     <Content Include="Content\img\skel1.jpg" />
     <Content Include="Content\img\skullfog1.jpg" />
+    <Content Include="Content\img\spider-man-toddler.jpg" />
+    <Content Include="Content\img\stealth-ninja.jpg" />
     <Content Include="Content\img\strobe1.jpg" />
     <Content Include="Content\img\superman1.jpg" />
     <Content Include="Content\img\tlm1.jpg" />
     <Content Include="Content\img\vader1.jpg" />
     <Content Include="Content\main-index.css" />
+    <Content Include="Content\order.css" />
     <Content Include="Global.asax" />
     <Content Include="Models\HalloweenModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
